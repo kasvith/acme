@@ -1,15 +1,17 @@
 #!/bin/bash
 
-wget https://product-dist.wso2.com/downloads/api-manager/cli/1.2.0/apimcli-1.2.0-linux-x64.tar.gz
+if [ ! -f $(pwd)/apimcli ]; then
+    echo "apimcli not installed"
+    wget https://product-dist.wso2.com/downloads/api-manager/cli/1.2.0/apimcli-1.2.0-linux-x64.tar.gz
 
-mkdir apimcliarchive
-tar -C apimcliarchive -xvzf apimcli-1.2.0-linux-x64.tar.gz
+    mkdir -p apimclidist
+    tar -C apimclidist -xvzf apimcli-1.2.0-linux-x64.tar.gz
 
-rm -rf apimcli
-mv ./apimcliarchive/apimcli/apimcli apimcli
+    mv -f ./apimclidist/apimcli/apimcli apimcli
 
-
-chmod +x apimcli
+    chmod +x apimcli
+    rm -rf apimclidist apimcli-1.2.0-linux-x64.tar.gz
+fi
 
 $(pwd)/apimcli add-env -n dev \
                       --registration https://localhost:9443/client-registration/v0.14/register \
