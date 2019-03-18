@@ -1,6 +1,7 @@
 wget https://product-dist.wso2.com/downloads/api-manager/cli/1.2.0/apimcli-1.2.0-linux-x64.tar.gz
 tar xvzf apimcli-1.2.0-linux-x64.tar.gz
-mv apimcli-1.2.0-linux-x64/apimcli/apimcli .
+ls
+mv apimcli/apimcli .
 
 chmod u+x apimcli
 
