@@ -4,6 +4,8 @@ tar xvzf apimcli-1.2.0-linux-x64.tar.gz
 mv apimcli apimcli.old
 mv apimcli.old/apimcli apimcli
 
+ls -al
+
 chmod u+x apimcli
 
 ./apimcli add-env -n dev \
