@@ -1,14 +1,14 @@
+#!/bin/bash
+
 wget https://product-dist.wso2.com/downloads/api-manager/cli/1.2.0/apimcli-1.2.0-linux-x64.tar.gz
 tar xvzf apimcli-1.2.0-linux-x64.tar.gz
 
 mv apimcli apimcli.old
 mv apimcli.old/apimcli apimcli
 
-ls -al
-
 chmod u+x apimcli
 
-./apimcli add-env -n dev \
+$(pwd)/apimcli add-env -n dev \
                       --registration https://localhost:9443/client-registration/v0.14/register \
                       --apim https://localhost:9443 \
                       --token https://localhost:8243/token \
@@ -18,7 +18,7 @@ chmod u+x apimcli
                       --app_list https://localhost:9443/api/am/store/v0.14/applications
 
 
-./apimcli add-env -n prod \
+$(pwd)/apimcli add-env -n prod \
                       --registration https://localhost:9444/client-registration/v0.14/register \
                       --apim https://localhost:9444 \
                       --token https://localhost:8244/token \
