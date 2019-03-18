@@ -6,7 +6,7 @@ mkdir apimcliarchive
 tar -C apimcliarchive -xvzf apimcli-1.2.0-linux-x64.tar.gz
 
 rm -rf apimcli
-mv ./apimcliarchive/apimcli apimcli
+mv ./apimcliarchive/apimcli/apimcli apimcli
 
 
 chmod +x apimcli
