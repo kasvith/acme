@@ -2,6 +2,8 @@ wget https://product-dist.wso2.com/downloads/api-manager/cli/1.2.0/apimcli-1.2.0
 tar xvzf apimcli-1.2.0-linux-x64.tar.gz
 mv apimcli-1.2.0-linux-x64/apimcli/apimcli .
 
+chmod u+x apimcli
+
 ./apimcli add-env -n dev \
                       --registration https://localhost:9443/client-registration/v0.14/register \
                       --apim https://localhost:9443 \
