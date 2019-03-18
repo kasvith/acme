@@ -9,14 +9,18 @@ pipeline {
                 sh './config-apim.sh'
             }
         }
-        stage('Build') {
-            steps {
-                echo 'Building artifact....'
+        stage('Deploy to Production') {
+            when{
+                buildingTag()
             }
-        }
-        stage('Test') {
             steps {
-                echo 'Testing...'
+                echo 'Building Artifact....'
+                sh 'zip -r PizzaShackAPI-1.0.0.zip PizzaShackAPI-1.0.0'
+                echo 'Deploying to Production'
+
+                withCredentials([usernamePassword(credentialsId: 'apim', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                    sh "$(pwd)/apimcli -f ./PizzaShackAPI-1.0.0.zip -e prod -u $USERNAME -p $PASSWORD -k"
+                }
             }
         }
     }
