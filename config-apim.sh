@@ -1,6 +1,8 @@
 #!/bin/bash
 
 wget https://product-dist.wso2.com/downloads/api-manager/cli/1.2.0/apimcli-1.2.0-linux-x64.tar.gz
+
+mkdir apimcliarchive
 tar -C apimcliarchive -xvzf apimcli-1.2.0-linux-x64.tar.gz
 
 rm -rf apimcli
