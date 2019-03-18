@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Setup APIM Environments'){
             steps{
-                sh './config-apim-envs.sh'
+                sh './config-apim.sh'
             }
         }
         stage('Build') {
