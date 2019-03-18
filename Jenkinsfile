@@ -9,14 +9,12 @@ pipeline {
                 sh './config-apim.sh'
             }
         }
-        stage('Build') {
-            steps {
-                echo 'Building artifact....'
+        stage('Deploy to Production') {
+            when{
+                buildingTag()
             }
-        }
-        stage('Test') {
             steps {
-                echo 'Testing...'
+                echo 'Building API....'
             }
         }
     }
