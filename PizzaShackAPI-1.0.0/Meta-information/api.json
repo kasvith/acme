@@ -4,7 +4,7 @@
     "apiName": "PizzaShackAPI",
     "version": "1.0.0"
   },
-  "uuid": "1f290979-a8ab-4338-a51b-5ce4b24a6895",
+  "uuid": "3572e0be-c930-4c4a-b053-dddd0baac871",
   "description": "This is a simple API for Pizza Shack online pizza delivery store.",
   "type": "HTTP",
   "context": "/pizzashack/1.0.0",
@@ -13,7 +13,7 @@
     "pizza"
   ],
   "documents": [],
-  "lastUpdated": "Mar 4, 2019 1:59:22 PM",
+  "lastUpdated": "Mar 19, 2019 2:16:31 PM",
   "availableTiers": [
     {
       "name": "Unlimited",
@@ -144,7 +144,7 @@
   "environments": [
     "Production and Sandbox"
   ],
-  "createdTime": "1551688159843",
+  "createdTime": "1552985189708",
   "additionalProperties": {},
   "environmentList": [
     "SANDBOX",
