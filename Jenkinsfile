@@ -22,7 +22,7 @@ pipeline {
                 echo 'Deploying to Production'
 
                 withCredentials([usernamePassword(credentialsId: 'apim', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-                    sh '$(pwd)/apimcli  import-api -f PizzaShackAPI-1.0.0.zip -e prod -u $USERNAME -p $PASSWORD -k --preserve-provider=false'
+                    sh '$(pwd)/apimcli  import-api -f PizzaShackAPI-1.0.0.zip -e prod -u $USERNAME -p $PASSWORD --preserve-provider=false'
                 }
             }
         }
