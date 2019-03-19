@@ -17,6 +17,7 @@ pipeline {
                 echo 'Building Artifact....'
                 sh 'zip -r PizzaShackAPI-1.0.0.zip PizzaShackAPI-1.0.0'
                 echo 'Deploying to Production'
+                sh 'echo $HOME'
 
                 withCredentials([usernamePassword(credentialsId: 'apim', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                     sh '$(pwd)/apimcli  import-api -f ./PizzaShackAPI-1.0.0.zip -e prod -u $USERNAME -p $PASSWORD -k'
